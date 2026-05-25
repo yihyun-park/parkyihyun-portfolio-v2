@@ -4,19 +4,25 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="format-detection" content="telephone=no" />
-    <title>PARK YIHYUN — UI·UX Designer &amp; Front-end Publisher Portfolio</title>
-    <meta name="description" content="공공·B2B·코퍼레이트·캠페인 — 11년차 UI·UX 디자이너 박이현의 포트폴리오. 6개 프로젝트의 의사결정 과정과 산출물을 정리했습니다." />
-    <meta name="keywords" content="박이현, Park Yihyun, UIUX 디자이너, UI 디자이너, UX 디자이너, 프론트엔드 퍼블리셔, 공공기관 웹, 디자인 시스템, 포트폴리오, 쏘카, 동반성장위원회, GIS 수문정보시스템, 네이버페이">
+    <title>박이현 · UI/UX Designer &amp; Front-end Publisher 포트폴리오 (v2)</title>
+    <meta name="description" content="11년차 UI/UX 디자이너 박이현의 포트폴리오. 쏘카·동반성장위원회·GIS 수문정보시스템·네이버페이 등 공공·B2B·코퍼레이트 웹의 정보 밀도 높은 화면을 디자인부터 퍼블리싱까지 담당했습니다." />
+    <meta name="keywords" content="박이현, Park Yihyun, UIUX 디자이너, UI 디자이너, UX 디자이너, 프론트엔드 퍼블리셔, 공공기관 웹, 동반성장위원회, 쏘카, GIS 수문정보시스템, 네이버페이, 반응형 웹, 디자인 시스템, 포트폴리오">
     <meta name="author" content="박이현 (Park Yihyun)">
     <meta name="robots" content="index, follow">
+    <meta name="googlebot" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#0c0c0c" media="(prefers-color-scheme: dark)">
 
-    <meta property="og:title" content="PARK YIHYUN — UI·UX Designer Portfolio">
-    <meta property="og:description" content="11년차 UI·UX 디자이너 박이현의 포트폴리오 — 6개 프로젝트의 의사결정 과정.">
+    <meta property="og:title" content="박이현 · UI/UX Designer Portfolio (v2)">
+    <meta property="og:description" content="11년차 UI/UX 디자이너 &amp; 프론트엔드 퍼블리셔. 공공·B2B·코퍼레이트 웹의 정보 밀도 높은 화면을 디자인부터 퍼블리싱까지 담당합니다.">
     <meta property="og:type" content="website">
     <meta property="og:locale" content="ko_KR">
-    <meta property="og:site_name" content="PARK YIHYUN Portfolio">
+    <meta property="og:locale:alternate" content="en_US">
+    <meta property="og:site_name" content="박이현 Portfolio">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="박이현 · UI/UX Designer Portfolio (v2)">
+    <meta name="twitter:description" content="11년차 UI/UX 디자이너 &amp; 프론트엔드 퍼블리셔">
 
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
     <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.css" />
@@ -666,11 +672,54 @@
             line-height: 1.7;
             color: rgba(255,255,255,0.66);
         }
+        .ct_status {
+            margin-top: 32px;
+            display: inline-flex; align-items: center; gap: 10px;
+            padding: 10px 18px;
+            background: rgba(255,255,255,0.06);
+            border-radius: var(--r-pill);
+            box-shadow: inset 0 0 0 1px rgba(255,255,255,0.1);
+            font-size: 14px;
+            color: rgba(255,255,255,0.88);
+            letter-spacing: -0.005em;
+        }
+        .ct_status .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: #22c55e;
+            box-shadow: 0 0 12px rgba(34,197,94,0.6);
+            display: inline-block;
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(0.85); }
+        }
+        .ct_status strong { color: #fff; font-weight: 700; }
+
         .ct_lst {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
             gap: 16px;
             position: relative;
+        }
+        .ct_pdf .val {
+            display: flex; flex-direction: column;
+            gap: 6px;
+            font-size: 18px;
+        }
+        .ct_pdf_meta {
+            font-size: 12px; font-weight: 600;
+            letter-spacing: 0.06em;
+            color: rgba(255,255,255,0.5);
+        }
+        .ct_pdf .val::after {
+            content: "";
+            margin-top: 8px;
+            display: inline-block;
+            width: 18px; height: 18px;
+            background: currentColor;
+            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v14M5 12l7 7 7-7M5 21h14'/></svg>") center/contain no-repeat;
+                    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v14M5 12l7 7 7-7M5 21h14'/></svg>") center/contain no-repeat;
         }
         .ct_it {
             display: flex; flex-direction: column;
@@ -847,12 +896,12 @@
                 <span class="idx"><em>06</em> / 06 PROJECTS</span>
             </p>
             <h2 class="hero_tit" id="hero_tit">
-                결정으로<br>설계하는 디자인,<br><em>11년.</em>
+                정보 밀도 높은 화면을,<br>디자인부터<br><em>코드까지.</em>
             </h2>
             <p class="hero_sub">
                 공공·B2B 관제·코퍼레이트·캠페인 — 도메인이 달라도<br>
                 매번 정보 위계와 의사결정의 결을 똑같이 다뤘습니다.<br>
-                디자인과 퍼블리싱을 한 사람이 끝까지 책임지는 11년의 기록.
+                디자인과 퍼블리싱을 한 사람이 끝까지 책임지는 <strong style="color:#fff">11년의 기록</strong>.
             </p>
             <p class="hero_actions">
                 <a href="#work" class="btn_pri">프로젝트 보기</a>
@@ -898,12 +947,12 @@
                 <article class="step">
                     <div class="step_lbl" data-num="01"><span class="tag">WHO</span></div>
                     <div class="step_body">
-                        <h3 class="step_tit">정보 밀도가 높은 화면을<br>디자인부터 코드까지.</h3>
+                        <h3 class="step_tit">디자인 + 퍼블리싱을<br>한 명이.</h3>
                         <p class="desc">
-                            안녕하세요, <strong>박이현</strong>입니다. 공공기관·B2B 관제 플랫폼·코퍼레이트 블로그·캠페인 랜딩 등 <strong>도메인이 다른 영역에서 11년</strong>간 UI·UX 디자인과 프론트엔드 퍼블리싱을 함께 해왔습니다. 디자인 시스템을 직접 구축·운영하며 디자이너와 개발자 사이의 갭을 줄이는 데 집중합니다.
+                            안녕하세요, <strong>박이현</strong>입니다. <strong>11년간 공공기관, B2B 관제 플랫폼, 코퍼레이트 블로그, 캠페인 랜딩</strong> 등 다양한 도메인에서 UI/UX 디자인과 프론트엔드 퍼블리싱을 함께 해왔습니다. 디자인 시스템을 직접 구축·운영하며 디자이너와 개발자 사이의 갭을 줄이는 데 집중합니다.
                         </p>
                         <ul class="step_tags">
-                            <li>UI·UX Design</li>
+                            <li>UI/UX Design</li>
                             <li>Front-end Publishing</li>
                             <li>Design System</li>
                             <li>Promotional Content</li>
@@ -911,31 +960,38 @@
                     </div>
                 </article>
 
-                <!-- 02 PHILOSOPHY (focus) -->
+                <!-- 02 STRENGTHS (focus) -->
                 <article class="step step_focus">
-                    <div class="step_lbl" data-num="02"><span class="tag">PHILOSOPHY</span></div>
+                    <div class="step_lbl" data-num="02"><span class="tag">STRENGTHS</span></div>
                     <div class="step_body">
-                        <h3 class="step_tit">문제를 다시 정의하는 게<br>디자인의 시작이라고 봅니다.</h3>
+                        <h3 class="step_tit">도메인을<br>깊게 이해합니다.</h3>
                         <p class="desc">
-                            '블로그가 없다'를 '발화가 흩어진다'로, '구식이다'를 '주 사용자에게 닫혀 있다'로 — <strong>표면 증상이 아니라 본질을 다시 명명한 다음에 결정을 내립니다</strong>. 그 결정의 근거를 산출물 옆에 같이 남겨두는 편이 디자인 그 자체보다 더 자산이 된다고 믿습니다. 디자이너 없이도 운영팀이 안정적으로 굴릴 수 있는 골격을 남기는 게 매 프로젝트의 목표입니다.
+                            '블로그가 없다'를 '발화가 흩어진다'로, '구식이다'를 '주 사용자에게 닫혀 있다'로 — <strong>표면 증상이 아니라 본질을 다시 명명한 다음에 결정</strong>을 내립니다. 그 결정의 근거를 산출물 옆에 같이 남겨두는 편이 디자인 그 자체보다 더 자산이 된다고 믿습니다. 디자이너 없이도 운영팀이 안정적으로 굴릴 수 있는 골격을 남기는 게 매 프로젝트의 목표입니다.
                         </p>
                         <ul class="step_tags">
-                            <li class="is-key">문제 재정의</li>
-                            <li>의사결정 명시</li>
-                            <li>운영 자율성 확보</li>
-                            <li>의도 손실 0</li>
+                            <li class="is-key">11년 도메인 경험</li>
+                            <li>디자인-퍼블리싱 풀스택</li>
+                            <li>디자인 시스템 운영</li>
+                            <li>문제 재정의 · 의사결정 명시</li>
                         </ul>
                     </div>
                 </article>
 
-                <!-- 03 FOCUS -->
+                <!-- 03 TOOLS -->
                 <article class="step">
-                    <div class="step_lbl" data-num="03"><span class="tag">FOCUS</span></div>
+                    <div class="step_lbl" data-num="03"><span class="tag">TOOLS</span></div>
                     <div class="step_body">
-                        <h3 class="step_tit">최근에는 AI 도구를 워크플로우에.<br>속도와 정확도를 함께.</h3>
+                        <h3 class="step_tit">도구는 익숙하게,<br>결정은 정직하게.</h3>
                         <p class="desc">
-                            2025년부터 <strong>Claude · Codex 등 AI 도구를 디자인-퍼블리싱 사이클에 적극 결합</strong>해 의사결정의 가설과 검증을 빠르게 회전시키는 작업 방식을 만들고 있습니다. 도구는 익숙하게(Figma · Photoshop · Illustrator · HTML/CSS/JS), 결정은 도메인과 사용자에 정직하게 — 두 축의 균형이 다음 11년의 방향입니다.
+                            Figma · Photoshop · Illustrator · HTML/CSS/JavaScript — 도구는 손에 익게 다루고, 결정은 도메인과 사용자에 정직하게 내립니다. 최근에는 <strong>Claude · Codex 등 AI 도구를 디자인-퍼블리싱 사이클에 적극 결합</strong>(2025 — 적극 도입)해 가설과 검증을 빠르게 회전시키는 작업 방식을 만들고 있습니다. 두 축의 균형이 다음 11년의 방향입니다.
                         </p>
+                        <ul class="step_tags">
+                            <li>Figma</li>
+                            <li>Photoshop</li>
+                            <li>Illustrator</li>
+                            <li>HTML · CSS · JavaScript</li>
+                            <li class="is-key">Claude · Codex · llm-wiki</li>
+                        </ul>
                         <div class="ab_stats">
                             <div>
                                 <span class="s_val is-pt">11<span class="u">Y</span></span>
@@ -1147,8 +1203,12 @@
         <div class="inner">
             <header class="ct_head">
                 <p class="eyebrow">(CONTACT · LET'S TALK)</p>
-                <h2 class="tit" id="contact_tit">함께 일할 자리가 있다면,<br>편하게 말씀 주세요.</h2>
-                <p class="lead">이메일 또는 전화로 편하게 연락 주세요. 가능한 빠르게, 24시간 안에 답변 드립니다.</p>
+                <h2 class="tit" id="contact_tit">좋은 화면을 함께 만들<br>사람을 찾고 계신가요?</h2>
+                <p class="lead">공공·B2B·코퍼레이트 도메인의 정보 밀도 높은 웹 디자인과 퍼블리싱이 필요하신가요? 이메일 또는 전화로 편하게 연락 주세요. <strong style="color:#fff">가능한 빠르게, 24시간 안에 답변 드립니다.</strong></p>
+                <p class="ct_status">
+                    <span class="dot" aria-hidden="true"></span>
+                    <span><strong>2026.07 — 신규 프로젝트 가능</strong> · Seoul, Republic of Korea (GMT+9)</span>
+                </p>
             </header>
             <dl class="ct_lst">
                 <div class="ct_it">
@@ -1158,6 +1218,15 @@
                 <div class="ct_it">
                     <dt class="lbl">PHONE</dt>
                     <dd><a class="val" href="tel:+82-10-3990-1108">+82 10-3990-1108</a></dd>
+                </div>
+                <div class="ct_it ct_pdf">
+                    <dt class="lbl">PORTFOLIO PDF</dt>
+                    <dd>
+                        <a class="val" href="박이현_포트폴리오.pdf" download="박이현_포트폴리오.pdf">
+                            박이현_포트폴리오.pdf
+                            <span class="ct_pdf_meta">17.6 MB · Updated 2026.05</span>
+                        </a>
+                    </dd>
                 </div>
             </dl>
         </div>
