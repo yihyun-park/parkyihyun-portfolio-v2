@@ -518,18 +518,54 @@
         .wk_thumb {
             position: relative;
             aspect-ratio: 16 / 11;
-            background: var(--c-bg-sub);
+            background: #fff;
             overflow: hidden;
         }
+        /* Browser chrome bar at the top of the thumb */
+        .wk_chrome {
+            position: absolute; top: 0; left: 0; right: 0;
+            height: 40px;
+            display: flex; align-items: center; gap: 6px;
+            padding: 0 16px;
+            background: #f3f4f6;
+            box-shadow: 0 1px 0 rgba(17,17,17,0.06);
+            z-index: 2;
+        }
+        .wk_chrome i {
+            width: 10px; height: 10px; border-radius: 50%;
+            background: #d1d5db;
+            flex: 0 0 auto;
+        }
+        .wk_chrome i:nth-child(1) { background: #ff5f56; }
+        .wk_chrome i:nth-child(2) { background: #ffbd2e; }
+        .wk_chrome i:nth-child(3) { background: #27c93f; }
+        .wk_chrome .url {
+            margin-left: 8px;
+            padding: 4px 12px;
+            font-size: 12px; color: var(--c-ink-3);
+            background: #fff; border-radius: var(--r-pill);
+            font-variant-numeric: tabular-nums;
+            letter-spacing: 0.01em;
+            min-width: 0;
+            max-width: 75%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        /* Image fills below chrome */
         .wk_img {
-            position: absolute; inset: 0;
-            width: 100%; height: 100%;
+            position: absolute; top: 40px; left: 0; right: 0; bottom: 0;
+            width: 100%;
+            height: calc(100% - 40px);
             object-fit: cover;
             object-position: top center;
-            transition: transform .5s ease;
+            transition: object-position 8s linear;
         }
-        .wk_it:hover .wk_img { transform: scale(1.03); }
-        .wk_it.is-feat .wk_img { object-position: center; }
+        /* On hover, scroll the image down to reveal lower content */
+        .wk_it:hover .wk_img { object-position: bottom center; }
+        /* Number / chip overlays — push below chrome only when chrome present */
+        .wk_thumb:has(.wk_chrome) .wk_no,
+        .wk_thumb:has(.wk_chrome) .wk_chip { top: 56px; }
         .wk_thumb .mock {
             position: absolute; inset: 0;
             display: flex; flex-direction: column;
@@ -1041,6 +1077,10 @@
                 <li class="wk_it is-feat">
                     <a class="wk_lk" href="portfolio-details.html#work-1">
                         <figure class="wk_thumb">
+                            <div class="wk_chrome" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                                <span class="url">socarcorp.kr/blog</span>
+                            </div>
                             <span class="wk_no" aria-hidden="true"><span class="dot"></span>01 · CORPORATE</span>
                             <span class="wk_chip">FEATURED</span>
                             <img class="wk_img" src="images/socar-pc.png" alt="쏘카 코퍼레이트 블로그 PC 메인 화면" loading="lazy" width="1600" height="1000">
@@ -1062,6 +1102,10 @@
                 <li class="wk_it">
                     <a class="wk_lk" href="portfolio-details.html#work-2">
                         <figure class="wk_thumb">
+                            <div class="wk_chrome" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                                <span class="url">gis-control · dashboard</span>
+                            </div>
                             <span class="wk_no" aria-hidden="true"><span class="dot"></span>02 · B2B CONTROL</span>
                             <img class="wk_img" src="images/gis-pc.png" alt="GIS 수문정보시스템 관제 대시보드 PC 화면" loading="lazy" width="1600" height="1000">
                         </figure>
@@ -1082,6 +1126,10 @@
                 <li class="wk_it">
                     <a class="wk_lk" href="portfolio-details.html#work-3">
                         <figure class="wk_thumb">
+                            <div class="wk_chrome" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                                <span class="url">esg.winwingrowth.or.kr</span>
+                            </div>
                             <span class="wk_no" aria-hidden="true"><span class="dot"></span>03 · FAMILY SITE</span>
                             <img class="wk_img" src="images/esg-main.png" alt="파트너스 ESG 홈페이지 PC 메인 화면" loading="lazy" width="1600" height="1000">
                         </figure>
@@ -1102,6 +1150,10 @@
                 <li class="wk_it">
                     <a class="wk_lk" href="portfolio-details.html#work-4">
                         <figure class="wk_thumb">
+                            <div class="wk_chrome" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                                <span class="url">winwingrowth.or.kr</span>
+                            </div>
                             <span class="wk_no" aria-hidden="true"><span class="dot"></span>04 · PUBLIC INSTITUTE</span>
                             <img class="wk_img" src="images/sangsaeng-pc.png" alt="동반성장위원회 웹사이트 PC 메인 화면" loading="lazy" width="1600" height="1000">
                         </figure>
@@ -1148,6 +1200,10 @@
                 <li class="wk_it">
                     <a class="wk_lk" href="portfolio-details.html#work-6">
                         <figure class="wk_thumb">
+                            <div class="wk_chrome" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                                <span class="url">campaign · 탄소중립포인트</span>
+                            </div>
                             <span class="wk_no" aria-hidden="true"><span class="dot"></span>06 · CAMPAIGN</span>
                             <img class="wk_img" src="images/naverpay-live-pc.png" alt="네이버페이 × 탄소중립포인트 캠페인 PC 랜딩" loading="lazy" width="1600" height="1000">
                         </figure>
