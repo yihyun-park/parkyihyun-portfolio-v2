@@ -657,19 +657,25 @@
             display: block;
             width: 100%; height: auto;
         }
-        .visual_tablet_solo .frame.is-img,
-        .visual_mobile_solo .frame.is-img {
-            background: #fff;
-        }
-        /* Inner screen acts as scroll viewport so bezel/notch stay fixed on top */
+        /* Inner screen — sits inside .frame's padding, acts as scroll viewport */
         .visual_tablet_solo .frame.is-img .scr,
         .visual_mobile_solo .frame.is-img .scr {
-            position: absolute; inset: 0;
+            position: relative;
+            inset: auto;
+            width: 100%;
+            height: 100%;
+            background: #fff;
             overflow-y: auto;
             overflow-x: hidden;
             scrollbar-width: none;
             -ms-overflow-style: none;
-            border-radius: inherit;
+        }
+        .visual_mobile_solo .frame.is-img .scr {
+            /* Inner screen radius — outer radius minus padding */
+            border-radius: 32px;
+        }
+        .visual_tablet_solo .frame.is-img .scr {
+            border-radius: 8px;
         }
         .visual_tablet_solo .frame.is-img .scr::-webkit-scrollbar,
         .visual_mobile_solo .frame.is-img .scr::-webkit-scrollbar { display: none; }
@@ -679,8 +685,8 @@
             width: 100%;
             height: auto;
         }
-        /* Push mobile content below the notch */
-        .visual_mobile_solo .frame.is-img .scr { padding-top: 36px; }
+        /* Reserve space at top of mobile screen so app content starts below the notch */
+        .visual_mobile_solo .frame.is-img .scr { padding-top: 28px; }
         /* Subtle scroll hint on the device cases — same as PC longshot */
         .visual_tablet_solo .frame.is-img::after,
         .visual_mobile_solo .frame.is-img::after {
@@ -756,6 +762,58 @@
             transform: translateX(-50%);
             width: 76px; height: 22px; border-radius: 14px;
             background: #1a1a1a; z-index: 2;
+        }
+
+        /* ---- Realistic device-mockup look (overrides above for .is-img variants) ---- */
+        /* Mobile: black phone body with padding bezel + screen + dynamic island notch */
+        .visual_mobile_solo .frame.is-img {
+            width: 280px;
+            aspect-ratio: 9 / 19;
+            background: #0c0c0c;
+            border-radius: 44px;
+            padding: 12px 10px;
+            box-shadow:
+                0 0 0 1.5px #2a2a2a,
+                0 24px 48px rgba(17,17,17,0.18);
+            overflow: visible;
+            position: relative;
+        }
+        .visual_mobile_solo .frame.is-img::before {
+            /* Dynamic-island style pill, sitting on top of the screen */
+            content: "";
+            position: absolute;
+            top: 22px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 86px; height: 24px;
+            border-radius: 14px;
+            background: #0c0c0c;
+            z-index: 5;
+            box-shadow: 0 0 0 0.5px rgba(255,255,255,0.04);
+        }
+
+        /* Tablet: black tablet body with padding bezel */
+        .visual_tablet_solo .frame.is-img {
+            background: #0c0c0c;
+            border-radius: 22px;
+            padding: 14px;
+            box-shadow:
+                0 0 0 1.5px #2a2a2a,
+                0 24px 48px rgba(17,17,17,0.14);
+            overflow: visible;
+            position: relative;
+        }
+        .visual_tablet_solo .frame.is-img::before {
+            /* Tablet front camera dot (subtle) */
+            content: "";
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            left: 5px;
+            width: 4px; height: 4px;
+            border-radius: 50%;
+            background: #2a2a2a;
+            z-index: 5;
         }
         .visual_caption {
             margin-top: 20px; text-align: center;
