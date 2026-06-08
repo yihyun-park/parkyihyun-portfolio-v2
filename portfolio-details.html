@@ -95,15 +95,25 @@
             display: flex; align-items: center; justify-content: space-between; gap: 24px;
         }
         .hd_brand {
-            display: flex; align-items: baseline; gap: 10px;
+            display: flex; align-items: center; gap: 12px;
             font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
+            line-height: 1;
         }
         .hd_brand .dot {
             width: 8px; height: 8px; border-radius: 50%;
             background: var(--c-point); display: inline-block;
-            transform: translateY(-1px);
+            flex: 0 0 auto;
         }
-        .hd_brand .role { font-size: 12px; font-weight: 500; color: var(--c-ink-3); letter-spacing: 0.04em; }
+        .hd_brand .role {
+            font-size: 11px; font-weight: 600;
+            color: var(--c-ink-3);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--c-bg-sub);
+            border-radius: var(--r-pill);
+            line-height: 1;
+        }
         .hd_back {
             display: inline-flex; align-items: center; gap: 6px;
             font-size: 14px; font-weight: 500; color: var(--c-ink-2);
@@ -219,13 +229,13 @@
         .prj_hero .hero_top .idx em { color: #fff; font-style: normal; }
 
         .prj_hero .tit {
-            font-size: clamp(36px, 5vw, 64px);
+            font-size: clamp(32px, 3.8vw, 52px);
             font-weight: 700;
-            line-height: 1.08;
-            letter-spacing: -0.03em;
+            line-height: 1.12;
+            letter-spacing: -0.025em;
             color: #fff;
             text-wrap: balance;
-            max-width: 18ch;
+            max-width: 22ch;
             position: relative;
         }
         .prj_hero .sub {
@@ -378,10 +388,10 @@
             min-width: 0;
         }
         .intro_flow .step_tit {
-            font-size: clamp(32px, 5vw, 68px);
+            font-size: clamp(28px, 3.6vw, 48px);
             font-weight: 700;
-            line-height: 1.08;
-            letter-spacing: -0.035em;
+            line-height: 1.12;
+            letter-spacing: -0.025em;
             color: var(--c-ink-1);
             text-wrap: balance;
             margin: 0;
@@ -543,10 +553,10 @@
         .goal_head .eyebrow::before { content: "("; color: var(--c-ink-3); margin-right: 4px; }
         .goal_head .eyebrow::after  { content: ")"; color: var(--c-ink-3); margin-left: 4px; }
         .goal_head .tit {
-            font-size: clamp(28px, 4vw, 56px);
+            font-size: clamp(24px, 3vw, 40px);
             font-weight: 700;
-            line-height: 1.15;
-            letter-spacing: -0.025em;
+            line-height: 1.18;
+            letter-spacing: -0.02em;
             color: var(--c-ink-1);
             text-wrap: balance;
         }

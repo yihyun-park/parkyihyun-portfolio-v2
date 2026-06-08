@@ -141,15 +141,25 @@
             display: flex; align-items: center; justify-content: space-between; gap: 24px;
         }
         .hd_brand {
-            display: flex; align-items: baseline; gap: 10px;
+            display: flex; align-items: center; gap: 12px;
             font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
+            line-height: 1;
         }
         .hd_brand .dot {
             width: 8px; height: 8px; border-radius: 50%;
             background: var(--c-point); display: inline-block;
-            transform: translateY(-1px);
+            flex: 0 0 auto;
         }
-        .hd_brand .role { font-size: 12px; font-weight: 500; color: var(--c-ink-3); letter-spacing: 0.04em; }
+        .hd_brand .role {
+            font-size: 11px; font-weight: 600;
+            color: var(--c-ink-3);
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            background: var(--c-bg-sub);
+            border-radius: var(--r-pill);
+            line-height: 1;
+        }
         .gnb_lst {
             display: flex; align-items: center; gap: 28px;
             font-size: 14px; font-weight: 500;
@@ -239,15 +249,15 @@
         .hero_top .idx em { color: #fff; font-style: normal; }
 
         .hero_tit {
-            font-size: clamp(40px, 5.4vw, 76px);
+            font-size: clamp(36px, 4.4vw, 60px);
             font-weight: 700;
-            line-height: 1.06;
-            letter-spacing: -0.035em;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
             color: #fff;
             text-wrap: balance;
             position: relative;
             margin: 0;
-            max-width: 18ch;
+            max-width: 20ch;
         }
         .hero_tit em {
             color: var(--c-point);
@@ -346,9 +356,9 @@
             font-variant-numeric: tabular-nums;
         }
         .sec_h .tit {
-            font-size: clamp(28px, 3.6vw, 56px);
-            font-weight: 700; line-height: 1.12;
-            letter-spacing: -0.025em;
+            font-size: clamp(26px, 3vw, 44px);
+            font-weight: 700; line-height: 1.15;
+            letter-spacing: -0.02em;
             color: var(--c-ink-1);
             text-wrap: balance;
             margin: 0;
@@ -404,10 +414,10 @@
             min-width: 0;
         }
         .ab_flow .step_tit {
-            font-size: clamp(32px, 5vw, 64px);
+            font-size: clamp(28px, 3.6vw, 48px);
             font-weight: 700;
-            line-height: 1.08;
-            letter-spacing: -0.035em;
+            line-height: 1.12;
+            letter-spacing: -0.025em;
             color: var(--c-ink-1);
             text-wrap: balance;
             margin: 0;
@@ -758,10 +768,10 @@
             margin-bottom: 20px;
         }
         .ct_head .tit {
-            font-size: clamp(40px, 6vw, 80px);
+            font-size: clamp(32px, 4.4vw, 60px);
             font-weight: 700;
-            line-height: 1.04;
-            letter-spacing: -0.035em;
+            line-height: 1.08;
+            letter-spacing: -0.03em;
             color: #fff;
             text-wrap: balance;
             margin: 0;
