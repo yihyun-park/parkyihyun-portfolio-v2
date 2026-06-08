@@ -160,7 +160,18 @@
             position: relative;
             transition: color .15s ease;
         }
-        .gnb_lk:hover { color: var(--c-ink-1); }
+        .gnb_lk:not(.is-cta)::after {
+            content: "";
+            position: absolute;
+            left: 0; right: 0; bottom: 0;
+            height: 1.5px;
+            background: var(--c-ink-1);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s cubic-bezier(.2,.6,.2,1);
+        }
+        .gnb_lk:not(.is-cta):hover { color: var(--c-ink-1); }
+        .gnb_lk:not(.is-cta):hover::after { transform: scaleX(1); }
         .gnb_lk.is-cta {
             padding: 10px 18px;
             background: var(--c-ink-1);
