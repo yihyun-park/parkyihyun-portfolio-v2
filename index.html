@@ -184,7 +184,7 @@
         /* --- HERO --------------------------------------------------- */
         #hero {
             position: relative;
-            padding: 160px 0 120px;
+            padding: 128px 0 96px;
             background: var(--c-bg-dark);
             color: #fff;
             overflow: hidden;
@@ -228,14 +228,15 @@
         .hero_top .idx em { color: #fff; font-style: normal; }
 
         .hero_tit {
-            font-size: clamp(44px, 8vw, 112px);
+            font-size: clamp(40px, 5.4vw, 76px);
             font-weight: 700;
-            line-height: 1.02;
-            letter-spacing: -0.04em;
+            line-height: 1.06;
+            letter-spacing: -0.035em;
             color: #fff;
             text-wrap: balance;
             position: relative;
             margin: 0;
+            max-width: 18ch;
         }
         .hero_tit em {
             color: var(--c-point);
@@ -350,7 +351,7 @@
         }
 
         /* --- ABOUT (intro_flow pattern) ---------------------------- */
-        #about { padding: 120px 0; }
+        #about { padding: 128px 0 96px; }
         .ab_flow {
             display: flex; flex-direction: column;
             position: relative;
@@ -493,7 +494,7 @@
 
         /* --- WORKS GRID -------------------------------------------- */
         #work {
-            padding: 120px 0;
+            padding: 128px 0;
             background: var(--c-bg-sub);
         }
         .wk_lst {
@@ -559,13 +560,57 @@
             height: calc(100% - 40px);
             object-fit: cover;
             object-position: top center;
-            transition: object-position 8s linear;
+            transition: transform .4s cubic-bezier(.2,.6,.2,1);
         }
-        /* On hover, scroll the image down to reveal lower content */
-        .wk_it:hover .wk_img { object-position: bottom center; }
+        .wk_it:hover .wk_img { transform: scale(1.025); }
         /* Number / chip overlays — push below chrome only when chrome present */
         .wk_thumb:has(.wk_chrome) .wk_no,
         .wk_thumb:has(.wk_chrome) .wk_chip { top: 56px; }
+
+        /* Promotional card — typographic mini-template (in place of screenshot) */
+        .wk_promo {
+            position: absolute; top: 40px; left: 0; right: 0; bottom: 0;
+            display: grid; place-items: center;
+            padding: 32px;
+            background:
+                radial-gradient(120% 80% at 20% 0%, rgba(37,99,235,0.08) 0%, transparent 60%),
+                linear-gradient(180deg, #f8f9fc 0%, #fff 100%);
+            overflow: hidden;
+        }
+        .wk_promo .promo_card {
+            text-align: left;
+            max-width: 280px;
+        }
+        .wk_promo .promo_eye {
+            display: inline-block;
+            font-size: 11px; font-weight: 700;
+            letter-spacing: 0.18em;
+            color: var(--c-point);
+            margin-bottom: 14px;
+        }
+        .wk_promo .promo_h {
+            font-size: clamp(24px, 2.4vw, 32px);
+            font-weight: 700;
+            line-height: 1.15;
+            letter-spacing: -0.02em;
+            color: var(--c-ink-1);
+            margin: 0 0 12px;
+        }
+        .wk_promo .promo_sub {
+            font-size: 13px;
+            line-height: 1.5;
+            color: var(--c-ink-3);
+            margin: 0 0 20px;
+        }
+        .wk_promo .promo_cta {
+            display: inline-block;
+            padding: 10px 18px;
+            font-size: 12px; font-weight: 700;
+            letter-spacing: 0.04em;
+            color: #fff;
+            background: var(--c-ink-1);
+            border-radius: var(--r-pill);
+        }
         .wk_thumb .mock {
             position: absolute; inset: 0;
             display: flex; flex-direction: column;
@@ -672,7 +717,7 @@
 
         /* --- CONTACT (dark) ---------------------------------------- */
         #contact {
-            padding: 120px 0;
+            padding: 128px 0;
             background: var(--c-bg-dark);
             color: #fff;
             position: relative;
@@ -731,40 +776,52 @@
         .ct_status .dot {
             width: 8px; height: 8px; border-radius: 50%;
             background: #22c55e;
-            box-shadow: 0 0 12px rgba(34,197,94,0.6);
+            box-shadow: 0 0 0 3px rgba(34,197,94,0.18);
             display: inline-block;
-            animation: pulse 2s ease-in-out infinite;
-        }
-        @keyframes pulse {
-            0%, 100% { opacity: 1; transform: scale(1); }
-            50% { opacity: 0.6; transform: scale(0.85); }
         }
         .ct_status strong { color: #fff; font-weight: 700; }
 
         .ct_lst {
             display: grid;
-            grid-template-columns: 1fr 1fr 1fr;
+            grid-template-columns: 1.4fr 1fr 1fr;
             gap: 16px;
             position: relative;
         }
+        /* Primary PDF card — earn the size */
+        .ct_pdf {
+            background: var(--c-point);
+            box-shadow: none;
+            transition: background .2s ease, transform .2s ease;
+        }
+        .ct_pdf:hover {
+            background: var(--c-point-d);
+            transform: translateY(-2px);
+        }
+        .ct_pdf .lbl { color: rgba(255,255,255,0.7); }
         .ct_pdf .val {
-            display: flex; flex-direction: column;
-            gap: 6px;
-            font-size: 18px;
+            display: grid;
+            grid-template-columns: 24px 1fr;
+            column-gap: 12px;
+            row-gap: 4px;
+            align-items: start;
+            font-size: 20px;
+            color: #fff;
+        }
+        .ct_pdf .val:hover { color: #fff; }
+        .ct_pdf .val::before {
+            content: "";
+            grid-row: 1 / span 2;
+            align-self: center;
+            width: 24px; height: 24px;
+            background: currentColor;
+            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3'/></svg>") center/contain no-repeat;
+                    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><path d='M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3'/></svg>") center/contain no-repeat;
         }
         .ct_pdf_meta {
+            grid-column: 2;
             font-size: 12px; font-weight: 600;
-            letter-spacing: 0.06em;
-            color: rgba(255,255,255,0.5);
-        }
-        .ct_pdf .val::after {
-            content: "";
-            margin-top: 8px;
-            display: inline-block;
-            width: 18px; height: 18px;
-            background: currentColor;
-            -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v14M5 12l7 7 7-7M5 21h14'/></svg>") center/contain no-repeat;
-                    mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.2' stroke-linecap='round' stroke-linejoin='round'><path d='M12 3v14M5 12l7 7 7-7M5 21h14'/></svg>") center/contain no-repeat;
+            letter-spacing: 0.04em;
+            color: rgba(255,255,255,0.75);
         }
         .ct_it {
             display: flex; flex-direction: column;
@@ -807,11 +864,25 @@
             display: flex; justify-content: space-between; align-items: flex-start;
             gap: 24px; flex-wrap: wrap;
         }
-        .ft_brand .name { font-size: 24px; font-weight: 700; letter-spacing: -0.02em; }
+        .ft_brand .name {
+            font-size: 24px; font-weight: 700; letter-spacing: -0.02em;
+            display: flex; align-items: center; gap: 10px;
+        }
+        .ft_brand .name .dot {
+            width: 8px; height: 8px; border-radius: 50%;
+            background: var(--c-point);
+        }
         .ft_brand .role { font-size: 14px; color: #888; margin-top: 6px; letter-spacing: 0.02em; }
-        .ft_contact { font-size: 14px; color: #888; line-height: 1.8; font-style: normal; }
-        .ft_contact a { color: #fff; }
-        .ft_contact a:hover { color: var(--c-accent); }
+        .ft_nav {
+            display: flex; gap: 24px;
+            font-size: 14px; font-weight: 500;
+            color: rgba(255,255,255,0.6);
+        }
+        .ft_nav a {
+            padding: 6px 0;
+            transition: color .15s ease;
+        }
+        .ft_nav a:hover { color: #fff; }
         .ft_bot { font-size: 12px; color: #555; box-shadow: 0 -1px 0 #1a1a1a; padding-top: 24px; }
 
         /* --- RESPONSIVE -------------------------------------------- */
@@ -920,7 +991,7 @@
             <ul class="gnb_lst">
                 <li><a href="#about" class="gnb_lk">About</a></li>
                 <li><a href="#work"  class="gnb_lk">Works</a></li>
-                <li><a href="#contact" class="gnb_lk gnb_lk is-cta">Contact</a></li>
+                <li><a href="#contact" class="gnb_lk is-cta">Contact</a></li>
             </ul>
         </nav>
     </div>
@@ -955,19 +1026,19 @@
             <dl class="hero_meta">
                 <div>
                     <dt>EXPERIENCE</dt>
-                    <dd>11<span class="u">Y</span></dd>
+                    <dd>11<span class="u">YEARS</span></dd>
                 </div>
                 <div>
                     <dt>PROJECTS</dt>
-                    <dd>06<span class="u">CASE</span></dd>
+                    <dd>06<span class="u">CASES</span></dd>
                 </div>
                 <div>
                     <dt>SCOPE</dt>
-                    <dd>UI · CODE</dd>
+                    <dd>UI<span class="u">→ CODE</span></dd>
                 </div>
                 <div>
-                    <dt>BASED IN</dt>
-                    <dd>SEOUL</dd>
+                    <dt>BASED</dt>
+                    <dd>SEOUL<span class="u">KR</span></dd>
                 </div>
             </dl>
         </div>
@@ -980,10 +1051,10 @@
         <div class="inner">
             <header class="sec_h">
                 <div>
-                    <p class="eyebrow">(ABOUT · 01 → 02 → 03)</p>
-                    <h2 class="tit" id="about_tit">디자인을 만드는 게 아니라,<br>결정을 남깁니다.</h2>
+                    <p class="eyebrow">(ABOUT · WHO → STRENGTHS → TOOLS)</p>
+                    <h2 class="tit" id="about_tit">11년의 결정,<br>한 사람의 화면.</h2>
                 </div>
-                <p class="lead">11년차 UI·UX 디자이너이자 프론트엔드 퍼블리셔. 디자인과 코드를 한 사람이 끝까지 책임지면서 의도가 손실되는 지점을 없애는 작업을 합니다.</p>
+                <p class="lead">UI/UX 디자이너이자 프론트엔드 퍼블리셔. 디자인과 코드를 한 사람이 끝까지 책임지면서 의도가 손실되는 지점을 없애는 작업을 합니다.</p>
             </header>
 
             <div class="ab_flow">
@@ -1039,16 +1110,16 @@
                         </ul>
                         <div class="ab_stats">
                             <div>
-                                <span class="s_val is-pt">11<span class="u">Y</span></span>
-                                <span class="s_lbl">DOMAIN EXP.</span>
+                                <span class="s_val is-pt">11<span class="u">YEARS</span></span>
+                                <span class="s_lbl">도메인 경험</span>
                             </div>
                             <div>
                                 <span class="s_val">06<span class="u">CASES</span></span>
-                                <span class="s_lbl">FEATURED</span>
+                                <span class="s_lbl">대표 프로젝트</span>
                             </div>
                             <div>
-                                <span class="s_val">1<span class="u">PERSON</span></span>
-                                <span class="s_lbl">DESIGN+CODE</span>
+                                <span class="s_val">UI<span class="u">→CODE</span></span>
+                                <span class="s_lbl">한 사람이 끝까지</span>
                             </div>
                         </div>
                     </div>
@@ -1093,7 +1164,7 @@
                             </p>
                             <h3 class="wk_tit">쏘카 코퍼레이트 블로그<br>그리고 메인 진입 영역</h3>
                             <p class="wk_sub">'블로그가 없다'가 아니라 '쏘카의 이야기가 흩어져 발화된다'를 문제로 재정의 — 시스템은 그대로 상속하고 메인 진입과 카드 위계만 새로 짠 프로젝트.</p>
-                            <span class="wk_more">프로젝트 자세히 보기</span>
+                            <span class="wk_more">자세히 보기</span>
                         </div>
                     </a>
                 </li>
@@ -1174,13 +1245,18 @@
                 <li class="wk_it">
                     <a class="wk_lk" href="portfolio-details.html#work-5">
                         <figure class="wk_thumb">
+                            <div class="wk_chrome" aria-hidden="true">
+                                <i></i><i></i><i></i>
+                                <span class="url">promotional · framework</span>
+                            </div>
                             <span class="wk_no" aria-hidden="true"><span class="dot"></span>05 · CONTENT DESIGN</span>
-                            <div class="mock">
-                                <span class="r pt" style="height:6%;width:24%"></span>
-                                <span class="r dk" style="height:12%;width:80%"></span>
-                                <span class="r dk" style="height:12%;width:60%"></span>
-                                <span class="r l2" style="flex:1"></span>
-                                <span class="r dk" style="height:10%;width:40%;border-radius:999px"></span>
+                            <div class="wk_promo" aria-hidden="true">
+                                <div class="promo_card">
+                                    <p class="promo_eye">CAMPAIGN</p>
+                                    <p class="promo_h">Headline<br>goes here.</p>
+                                    <p class="promo_sub">Sub copy supporting the message.</p>
+                                    <span class="promo_cta">자세히 보기</span>
+                                </div>
                             </div>
                         </figure>
                         <div class="wk_body">
@@ -1239,22 +1315,22 @@
                 </p>
             </header>
             <dl class="ct_lst">
+                <div class="ct_it ct_pdf">
+                    <dt class="lbl">PORTFOLIO · PDF</dt>
+                    <dd>
+                        <a class="val" href="박이현_포트폴리오.pdf" download="박이현_포트폴리오.pdf">
+                            <span>박이현_포트폴리오.pdf 다운로드</span>
+                            <span class="ct_pdf_meta">17.6 MB · Updated 2026.05</span>
+                        </a>
+                    </dd>
+                </div>
                 <div class="ct_it">
                     <dt class="lbl">EMAIL</dt>
                     <dd><a class="val" href="mailto:forestmm@naver.com">forestmm@naver.com</a></dd>
                 </div>
                 <div class="ct_it">
                     <dt class="lbl">PHONE</dt>
-                    <dd><a class="val" href="tel:+82-10-3990-1108">+82 10-3990-1108</a></dd>
-                </div>
-                <div class="ct_it ct_pdf">
-                    <dt class="lbl">PORTFOLIO PDF</dt>
-                    <dd>
-                        <a class="val" href="박이현_포트폴리오.pdf" download="박이현_포트폴리오.pdf">
-                            박이현_포트폴리오.pdf
-                            <span class="ct_pdf_meta">17.6 MB · Updated 2026.05</span>
-                        </a>
-                    </dd>
+                    <dd><a class="val" href="tel:+82-10-3990-1108">+82&nbsp;10-3990-1108</a></dd>
                 </div>
             </dl>
         </div>
@@ -1269,13 +1345,15 @@
     <div class="ft_inner">
         <div class="ft_top">
             <div class="ft_brand">
-                <p class="name">PARK YIHYUN</p>
+                <p class="name"><span class="dot" aria-hidden="true"></span>PARK YIHYUN</p>
                 <p class="role">UI·UX Designer &amp; Front-end Publisher · 2014 — 2026</p>
             </div>
-            <address class="ft_contact">
-                <p>EMAIL · <a href="mailto:forestmm@naver.com">forestmm@naver.com</a></p>
-                <p>PHONE · <a href="tel:+82-10-3990-1108">+82 10-3990-1108</a></p>
-            </address>
+            <nav class="ft_nav" aria-label="페이지 내 이동">
+                <a href="#about">About</a>
+                <a href="#work">Works</a>
+                <a href="#contact">Contact</a>
+                <a href="박이현_포트폴리오.pdf" download="박이현_포트폴리오.pdf">PDF</a>
+            </nav>
         </div>
         <p class="ft_bot">© 2026 PARK YIHYUN. All artworks shown are personal documentation of professional work.</p>
     </div>
