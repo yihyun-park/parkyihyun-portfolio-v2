@@ -360,7 +360,7 @@
             text-transform: none;
         }
         .intro_flow .step_lbl::before {
-            content: "(" attr(data-num) ")";
+            content: "(" attr(data-num) " / 03)";
             font-size: 12px; font-weight: 600;
             color: var(--c-ink-3);
             letter-spacing: 0.08em;
@@ -458,40 +458,14 @@
             letter-spacing: 0.06em;
         }
 
-        /* DECISIONS — focus row */
+        /* DECISIONS — focus row: cobalt spine + faint tint.
+           Dark surfaces are reserved for hero/footer only. */
         .intro_flow .step_focus {
-            background: var(--c-bg-dark);
-            color: #fff;
-            margin: 0 calc(50% - 50vw);
-            padding-left: calc(50vw - 50%);
-            padding-right: calc(50vw - 50%);
-            box-shadow: none;
+            background: linear-gradient(90deg, rgba(37,99,235,0.045), rgba(37,99,235,0) 64%);
+            box-shadow: inset 3px 0 0 var(--c-point), 0 -1px 0 var(--c-line);
+            padding-left: 40px;
         }
-        .intro_flow .step_focus + .step,
-        .step_focus { box-shadow: none; }
-        .intro_flow .step_focus .step_lbl { color: rgba(255,255,255,0.88); }
-        .intro_flow .step_focus .step_lbl::before { color: rgba(255,255,255,0.5); }
-        .intro_flow .step_focus .step_lbl .tag { color: #fff; }
-        .intro_flow .step_focus .step_lbl .tag::before,
-        .intro_flow .step_focus .step_lbl .tag::after { color: rgba(255,255,255,0.4); }
-        .intro_flow .step_focus .step_tit { color: #fff; }
-        .intro_flow .step_focus .step_body .desc { color: rgba(255,255,255,0.7); }
-        .intro_flow .step_focus .step_body .desc strong {
-            color: #fff;
-            background: linear-gradient(transparent 60%, rgba(37,99,235,0.5) 60%);
-        }
-        .intro_flow .step_focus .step_tags li {
-            background: rgba(255,255,255,0.08);
-            color: rgba(255,255,255,0.9);
-            box-shadow: none;
-        }
-        .intro_flow .step_focus .step_tags li.is-key {
-            background: var(--c-point);
-            color: #fff;
-        }
-        .intro_flow .step_focus .stats .s_val { color: #fff; }
-        .intro_flow .step_focus .stats .s_val.is-pt { color: var(--c-accent); }
-        .intro_flow .step_focus .stats .s_lbl { color: rgba(255,255,255,0.5); }
+        .intro_flow .step_focus .step_lbl::before { color: var(--c-point); }
 
         /* DELIVERABLES — outlined card variant */
         .intro_flow .step_out .step_tags li {
@@ -1136,10 +1110,7 @@
             .prj_intro { padding-bottom: 56px; }
             .prj_intro .para { font-size: 15px; padding: 24px 0; line-height: 1.75; }
             .intro_flow .step { padding: 40px 0; gap: 16px; }
-            .intro_flow .step_focus {
-                margin: 0 calc(50% - 50vw);
-                padding-left: 20px; padding-right: 20px;
-            }
+            .intro_flow .step_focus { padding-left: 20px; }
             .intro_flow .step_tit { font-size: clamp(28px, 7vw, 40px); }
             .intro_flow .step_body .desc { font-size: 15px; }
             .intro_flow .stats { gap: 32px; }
