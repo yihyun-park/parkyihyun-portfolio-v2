@@ -390,7 +390,7 @@
             min-width: 0;
         }
         .intro_flow .step_tit {
-            font-size: clamp(28px, 3.6vw, 48px);
+            font-size: clamp(24px, 3.4vw, 44px);
             font-weight: 700;
             line-height: 1.12;
             letter-spacing: -0.025em;
@@ -1068,8 +1068,6 @@
 
         /* --- RESPONSIVE (640px / 1024px breakpoints) --------------- */
         @media (max-width: 1024px) {
-            .prj_hero .tit { font-size: 40px; }
-            .goal_head .tit { font-size: 32px; }
             .prj_meta { grid-template-columns: repeat(2, 1fr); gap: 24px; padding: 28px 32px; }
             .prj_meta.has_site { grid-template-columns: repeat(3, 1fr); }
 
@@ -1113,7 +1111,12 @@
             .prj_intro .para { font-size: 15px; padding: 24px 0; line-height: 1.75; }
             .intro_flow .step { padding: 40px 0; gap: 16px; }
             .intro_flow .step_focus { padding-left: 20px; }
-            .intro_flow .step_tit { font-size: clamp(28px, 7vw, 40px); }
+            .intro_flow .step_tit { font-size: clamp(24px, 6vw, 36px); }
+            /* 작은 화면 — 큰 한글 헤딩 두께 700 → 600, 자간 완화 */
+            .prj_hero .tit, .intro_head .tit, .intro_flow .step_tit, .goal_head .tit, .visual_head .tit {
+                font-weight: 600;
+                letter-spacing: -0.02em;
+            }
             .intro_flow .step_body .desc { font-size: 15px; }
             .intro_flow .stats { gap: 32px; }
             .intro_flow .stats .s_val { font-size: 36px; }

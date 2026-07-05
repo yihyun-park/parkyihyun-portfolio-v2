@@ -252,7 +252,7 @@
         .hero_top .idx em { color: #fff; font-style: normal; }
 
         .hero_tit {
-            font-size: clamp(36px, 4.4vw, 60px);
+            font-size: clamp(32px, 5vw, 60px);
             font-weight: 700;
             line-height: 1.08;
             letter-spacing: -0.03em;
@@ -359,7 +359,7 @@
             font-variant-numeric: tabular-nums;
         }
         .sec_h .tit {
-            font-size: clamp(26px, 3vw, 44px);
+            font-size: clamp(24px, 3vw, 44px);
             font-weight: 700; line-height: 1.15;
             letter-spacing: -0.02em;
             color: var(--c-ink-1);
@@ -417,7 +417,7 @@
             min-width: 0;
         }
         .ab_flow .step_tit {
-            font-size: clamp(28px, 3.6vw, 48px);
+            font-size: clamp(24px, 3.4vw, 44px);
             font-weight: 700;
             line-height: 1.12;
             letter-spacing: -0.025em;
@@ -473,7 +473,7 @@
         }
         .ab_stats .s_val {
             display: block;
-            font-size: clamp(40px, 5vw, 64px);
+            font-size: clamp(32px, 4.5vw, 56px);
             font-weight: 700; line-height: 1;
             letter-spacing: -0.04em;
             color: var(--c-ink-1);
@@ -675,7 +675,7 @@
         }
         .wk_meta .sep { width: 3px; height: 3px; border-radius: 50%; background: var(--c-ink-3); }
         .wk_tit {
-            font-size: 24px;
+            font-size: clamp(20px, 1.8vw, 24px);
             font-weight: 700;
             line-height: 1.3;
             letter-spacing: -0.02em;
@@ -729,8 +729,8 @@
         .wk_it.is-feat .wk_lk { display: grid; grid-template-columns: 1.2fr 1fr; }
         .wk_it.is-feat .wk_thumb { aspect-ratio: auto; }
         .wk_it.is-feat .wk_body { padding: 48px; gap: 20px; }
-        .wk_it.is-feat .wk_tit { font-size: 32px; }
-        .wk_it.is-feat .wk_sub { font-size: 18px; }
+        .wk_it.is-feat .wk_tit { font-size: clamp(22px, 2.4vw, 30px); }
+        .wk_it.is-feat .wk_sub { font-size: clamp(16px, 1.4vw, 18px); }
 
         /* --- CONTACT (dark) ---------------------------------------- */
         #contact {
@@ -764,7 +764,7 @@
             margin-bottom: 20px;
         }
         .ct_head .tit {
-            font-size: clamp(32px, 4.4vw, 60px);
+            font-size: clamp(28px, 4.4vw, 56px);
             font-weight: 700;
             line-height: 1.08;
             letter-spacing: -0.03em;
@@ -949,7 +949,7 @@
             .sec_h { margin-bottom: 40px; }
             .ab_flow .step { padding: 40px 0; gap: 16px; }
             .ab_flow .step_focus { padding-left: 20px; }
-            .ab_flow .step_tit { font-size: clamp(28px, 7vw, 40px); }
+            .ab_flow .step_tit { font-size: clamp(24px, 6vw, 36px); }
             .ab_flow .step_body .desc { font-size: 16px; }
             .ab_stats { gap: 32px; }
             .ab_stats .s_val { font-size: 36px; }
@@ -970,6 +970,12 @@
         }
 
         @media (max-width: 480px) {
+            /* 작은 화면 — 큰 한글 헤딩은 700이 뭉쳐 보여 600으로, 자간 완화 */
+            .hero_tit, .sec_h .tit, .ab_flow .step_tit, .ct_head .tit, .wk_tit {
+                font-weight: 600;
+                letter-spacing: -0.02em;
+            }
+            .ab_stats .s_val { font-weight: 600; }
             .hd_brand { font-size: 14px; gap: 8px; }
             .gnb_lst { gap: 12px; font-size: 13px; }
             .gnb_lk.is-cta { padding: 6px 12px; }
@@ -1117,7 +1123,7 @@
                     <div class="step_body">
                         <h3 class="step_tit">도구는 익숙하게,<br>AI는 적극적으로.</h3>
                         <p class="desc">
-                            Figma · Photoshop · Illustrator · HTML/CSS/JavaScript — 도구는 손에 익게 다루고, 결정은 도메인과 사용자에 정직하게 내립니다.<br>최근에는 <strong>Claude · Codex 등 AI 도구를 디자인-퍼블리싱 사이클에 적극 결합</strong>(2025 — 적극 도입)해 가설과 검증을 빠르게 회전시키는 작업 방식을 만들고 있습니다.<br>두 축의 균형이 다음 11년의 방향입니다.
+                            Figma · Photoshop · Illustrator · HTML/CSS/JavaScript — 도구는 손에 익게 다루고, 결정은 도메인과 사용자에 정직하게 내립니다.<br>최근에는 <strong>Claude · Codex 등 AI 도구를 디자인-퍼블리싱 사이클에 적극 결합</strong>해 가설과 검증을 빠르게 회전시키는 작업 방식을 만들고 있습니다.<br>두 축의 균형이 다음 11년의 방향입니다.
                         </p>
                         <ul class="step_tags">
                             <li>Figma</li>
