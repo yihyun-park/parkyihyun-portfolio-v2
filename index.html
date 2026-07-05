@@ -137,9 +137,12 @@
         }
         .hd_inner {
             max-width: var(--cont-w); margin: 0 auto;
-            padding: 16px var(--gutter);
+            padding: 0 var(--gutter);
+            height: 64px;
             display: flex; align-items: center; justify-content: space-between; gap: 24px;
         }
+        .hd_brand span { white-space: nowrap; }
+        .gnb_lk { white-space: nowrap; }
         .hd_brand {
             display: flex; align-items: center; gap: 12px;
             font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
@@ -928,7 +931,8 @@
 
         @media (max-width: 768px) {
             :root { --gutter: 20px; }
-            .gnb_lst { gap: 18px; font-size: 14px; }
+            .hd_inner { height: 56px; }
+            .gnb_lst { gap: 16px; font-size: 14px; }
             .gnb_lk.is-cta { padding: 8px 14px; }
             .hd_brand .role { display: none; }
 
@@ -966,6 +970,9 @@
         }
 
         @media (max-width: 480px) {
+            .hd_brand { font-size: 14px; gap: 8px; }
+            .gnb_lst { gap: 12px; font-size: 13px; }
+            .gnb_lk.is-cta { padding: 6px 12px; }
             .hero_top { font-size: 11px; }
             .hero_meta { grid-template-columns: 1fr; }
             .hero_meta > div + div {

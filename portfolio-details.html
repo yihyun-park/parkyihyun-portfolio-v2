@@ -91,9 +91,11 @@
         }
         .hd_inner {
             max-width: var(--cont-w); margin: 0 auto;
-            padding: 16px var(--gutter);
+            padding: 0 var(--gutter);
+            height: 64px; /* #gnb sticky top과 반드시 일치 */
             display: flex; align-items: center; justify-content: space-between; gap: 24px;
         }
+        .hd_brand span { white-space: nowrap; }
         .hd_brand {
             display: flex; align-items: center; gap: 12px;
             font-size: 16px; font-weight: 700; letter-spacing: -0.01em;
@@ -1089,7 +1091,7 @@
         @media (max-width: 640px) {
             :root { --gutter: 20px; }
             #container { padding: 56px 0 96px; }
-            .hd_inner { padding: 14px var(--gutter); }
+            .hd_inner { height: 56px; }
             .hd_brand { font-size: 14px; }
             .hd_brand .role { display: none; }
             #gnb { top: 56px; }
