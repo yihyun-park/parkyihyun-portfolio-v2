@@ -182,8 +182,8 @@
             position: relative;
             margin: -96px 0 0;
             padding: 160px 0 96px;
-            background: var(--c-bg-dark);
-            color: #fff;
+            background: var(--c-bg);
+            color: var(--c-ink-1);
             overflow: hidden;
         }
         .prj_hero .inner_narrow,
@@ -200,7 +200,7 @@
             font-weight: 700;
             line-height: 0.8;
             letter-spacing: -0.06em;
-            color: rgba(255,255,255,0.03);
+            color: rgba(17,17,17,0.04);
             font-variant-numeric: tabular-nums;
             font-feature-settings: "tnum" on;
             pointer-events: none;
@@ -213,29 +213,29 @@
             position: relative;
             font-size: 12px; font-weight: 600;
             letter-spacing: 0.12em;
-            color: rgba(255,255,255,0.5);
+            color: var(--c-ink-3);
         }
         .prj_hero .hero_top .mark {
             display: inline-flex; align-items: center; gap: 10px;
-            color: #fff;
+            color: var(--c-ink-1);
         }
         .prj_hero .hero_top .mark::before {
             content: ""; width: 8px; height: 8px; border-radius: 50%;
-            background: #fff;
-            box-shadow: 0 0 12px rgba(255,255,255,0.35);
+            background: var(--c-ink-1);
+            box-shadow: none;
         }
         .prj_hero .hero_top .idx {
             font-variant-numeric: tabular-nums;
             font-feature-settings: "tnum" on;
         }
-        .prj_hero .hero_top .idx em { color: #fff; font-style: normal; }
+        .prj_hero .hero_top .idx em { color: var(--c-ink-1); font-style: normal; }
 
         .prj_hero .tit {
             font-size: clamp(32px, 3.8vw, 52px);
             font-weight: 700;
             line-height: 1.12;
             letter-spacing: -0.025em;
-            color: #fff;
+            color: var(--c-ink-1);
             text-wrap: balance;
             max-width: 22ch;
             position: relative;
@@ -244,7 +244,7 @@
             margin-top: 40px;
             font-size: clamp(16px, 1.4vw, 20px);
             font-weight: 500;
-            color: rgba(255,255,255,0.66);
+            color: var(--c-ink-2);
             line-height: 1.65;
             letter-spacing: -0.005em;
             max-width: 56ch;
@@ -260,13 +260,13 @@
             border-radius: 0;
             font-size: 12px; font-weight: 700;
             letter-spacing: 0.16em;
-            color: rgba(255,255,255,0.66);
+            color: var(--c-ink-3);
             text-transform: uppercase;
             margin-bottom: 56px;
         }
         .prj_hero .prj_mark::before {
-            background: #fff;
-            box-shadow: 0 0 12px rgba(255,255,255,0.35);
+            background: var(--c-ink-1);
+            box-shadow: none;
         }
 
         /* --- 2. META — modern inline grid (top hairline only) -------- */
@@ -1373,7 +1373,6 @@
                     </div>
                     <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
                         <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc"><span>PC</span></button>
-                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet"><span>Tablet</span></button>
                         <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile"><span>Mobile</span></button>
                     </div>
                 </header>
@@ -1398,18 +1397,6 @@
                     </div>
 
                     <!-- TABLET -->
-                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
-                        <div class="visual_tablet_solo">
-                            <div class="frame" role="img" aria-label="쏘카 블로그 태블릿 화면 목업">
-                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:6%;gap:4%">
-                                    <span style="height:8%;background:var(--c-line);border-radius:4px;width:30%"></span>
-                                    <span style="height:6%;background:var(--c-point);border-radius:4px;width:24%"></span>
-                                    <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;gap:4%"><span style="background:var(--c-line-2);border-radius:8px"></span><span style="background:var(--c-line-2);border-radius:8px"></span><span style="background:var(--c-line-2);border-radius:8px"></span><span style="background:var(--c-line-2);border-radius:8px"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="visual_caption"><strong>768px</strong> · 2단 그리드 카드 레이아웃</p>
-                    </div>
 
                     <!-- MOBILE -->
                     <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
@@ -1533,7 +1520,6 @@
                     </div>
                     <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
                         <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">PC</button>
-                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">Tablet</button>
                         <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">Mobile</button>
                     </div>
                 </header>
@@ -1551,18 +1537,6 @@
                             </div>
                         </figure>
                         <p class="visual_caption"><strong>1440px</strong> · 관제 대시보드 풀페이지</p>
-                    </div>
-                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
-                        <div class="visual_tablet_solo">
-                            <div class="frame" role="img" aria-label="수문정보 태블릿 화면 목업">
-                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:5%;gap:3%">
-                                    <span style="height:8%;background:#605BFF;border-radius:4px;width:24%"></span>
-                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3%;height:18%"><span style="background:rgba(96,91,255,0.18);border-radius:6px"></span><span style="background:var(--c-line-2);border-radius:6px"></span></div>
-                                    <span style="flex:1;background:rgba(96,91,255,0.12);border-radius:8px"></span>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="visual_caption"><strong>768px</strong> · 지도 + 데이터 2단</p>
                     </div>
                     <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
                         <div class="visual_mobile_solo">
@@ -1684,7 +1658,6 @@
                     </div>
                     <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
                         <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">PC</button>
-                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">Tablet</button>
                         <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">Mobile</button>
                     </div>
                 </header>
@@ -1702,18 +1675,6 @@
                             </div>
                         </figure>
                         <p class="visual_caption"><strong>1600px</strong> · ESG 홈 풀페이지</p>
-                    </div>
-                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
-                        <div class="visual_tablet_solo">
-                            <div class="frame" role="img" aria-label="파트너스 ESG 태블릿 목업">
-                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:5%;gap:3%">
-                                    <span style="height:6%;background:var(--c-ink-1);border-radius:4px;width:24%"></span>
-                                    <span style="flex:1;background:rgba(79,209,197,0.32);border-radius:10px"></span>
-                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3%;height:30%"><span style="background:var(--c-line-2);border-radius:6px"></span><span style="background:var(--c-line-2);border-radius:6px"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="visual_caption"><strong>768px</strong> · 2단 그리드</p>
                     </div>
                     <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
                         <div class="visual_mobile_solo">
@@ -2156,7 +2117,6 @@
                     </div>
                     <div class="visual_tabs" role="tablist" aria-label="해상도 전환">
                         <button type="button" class="btn_v" role="tab" aria-selected="true"  data-vtab="pc">PC</button>
-                        <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="tablet">Tablet</button>
                         <button type="button" class="btn_v" role="tab" aria-selected="false" data-vtab="mobile">Mobile</button>
                     </div>
                 </header>
@@ -2174,19 +2134,6 @@
                             </div>
                         </figure>
                         <p class="visual_caption"><strong>1440px</strong> · 캠페인 랜딩 풀페이지 · 상·하단 CTA</p>
-                    </div>
-                    <div class="visual_pane" data-vpane="tablet" role="tabpanel" hidden>
-                        <div class="visual_tablet_solo">
-                            <div class="frame" role="img" aria-label="캠페인 태블릿 목업">
-                                <div style="position:absolute;inset:0;display:flex;flex-direction:column;padding:5%;gap:3%">
-                                    <span style="height:6%;background:#03C75A;border-radius:4px;width:20%"></span>
-                                    <span style="height:30%;background:linear-gradient(135deg,#E8F8EF,#F0F4FF);border-radius:10px"></span>
-                                    <span style="height:8%;background:var(--c-point);border-radius:999px;width:40%;margin:0 auto"></span>
-                                    <div style="display:grid;grid-template-columns:1fr 1fr;gap:3%;flex:1"><span style="background:var(--c-line-2);border-radius:6px"></span><span style="background:var(--c-line-2);border-radius:6px"></span></div>
-                                </div>
-                            </div>
-                        </div>
-                        <p class="visual_caption"><strong>768px</strong> · 2단 그리드</p>
                     </div>
                     <div class="visual_pane" data-vpane="mobile" role="tabpanel" hidden>
                         <div class="visual_mobile_solo">
