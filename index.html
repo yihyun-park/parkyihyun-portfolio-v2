@@ -209,9 +209,10 @@
         #hero {
             position: relative;
             padding: 128px 0 96px;
-            background: var(--c-bg);
+            background: var(--c-bg-sub);
             color: var(--c-ink-1);
             overflow: hidden;
+            box-shadow: inset 0 -1px 0 var(--c-line);
         }
         #hero::before {
             content: "11";
@@ -305,7 +306,7 @@
             color: var(--c-ink-1);
             background: transparent;
             border-radius: var(--r-pill);
-            box-shadow: inset 0 0 0 1px var(--c-line);
+            box-shadow: inset 0 0 0 1px rgba(17,17,17,0.16);
             transition: box-shadow .15s ease, color .15s ease;
         }
         .btn_sec:hover { box-shadow: inset 0 0 0 1px var(--c-ink-1); }
