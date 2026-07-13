@@ -30,7 +30,7 @@
             --c-line-2  : #EFF0F2;
             --c-bg      : #FFFFFF;
             --c-bg-sub  : #F6F7F9;
-            --c-bg-dark : #0C0C0C;
+            --c-bg-dark : #141414;
 
             /* Shadow (border 대신 box-shadow) */
             --sh-1: 0 2px 8px rgba(17,17,17,0.04), 0 0 0 1px rgba(17,17,17,0.04);
@@ -103,7 +103,7 @@
         }
         .hd_brand .dot {
             width: 8px; height: 8px; border-radius: 50%;
-            background: var(--c-point); display: inline-block;
+            background: var(--c-ink-1); display: inline-block;
             flex: 0 0 auto;
         }
         .hd_brand .role {
@@ -120,7 +120,7 @@
             display: inline-flex; align-items: center; gap: 6px;
             font-size: 14px; font-weight: 500; color: var(--c-ink-2);
         }
-        .hd_back:hover { color: var(--c-point); }
+        .hd_back:hover { color: var(--c-ink-1); }
 
         /* --- PROJECT TAB NAV --------------------------------------- */
         #gnb {
@@ -158,9 +158,9 @@
         .gnb_list .btn_tab[aria-selected="true"] { color: var(--c-ink-1); font-weight: 600; }
         .gnb_list .btn_tab[aria-selected="true"]::after {
             content: ""; position: absolute; left: 0; right: 0; bottom: 0;
-            height: 2px; background: var(--c-point);
+            height: 2px; background: var(--c-ink-1);
         }
-        .gnb_list .btn_tab[aria-selected="true"] .num { color: var(--c-point); }
+        .gnb_list .btn_tab[aria-selected="true"] .num { color: var(--c-ink-1); }
 
         /* --- CONTAINER --------------------------------------------- */
         #container { padding: 96px 0 160px; }
@@ -221,8 +221,8 @@
         }
         .prj_hero .hero_top .mark::before {
             content: ""; width: 8px; height: 8px; border-radius: 50%;
-            background: var(--c-point);
-            box-shadow: 0 0 16px rgba(37,99,235,0.5);
+            background: #fff;
+            box-shadow: 0 0 12px rgba(255,255,255,0.35);
         }
         .prj_hero .hero_top .idx {
             font-variant-numeric: tabular-nums;
@@ -265,8 +265,8 @@
             margin-bottom: 56px;
         }
         .prj_hero .prj_mark::before {
-            background: var(--c-point);
-            box-shadow: 0 0 16px rgba(37,99,235,0.5);
+            background: #fff;
+            box-shadow: 0 0 12px rgba(255,255,255,0.35);
         }
 
         /* --- 2. META — modern inline grid (top hairline only) -------- */
@@ -299,7 +299,7 @@
             letter-spacing: -0.005em;
         }
         .prj_meta dd a {
-            color: var(--c-point);
+            color: var(--c-ink-1);
             display: inline-flex; align-items: center; gap: 4px;
             box-shadow: 0 1px 0 currentColor;
             padding-bottom: 2px;
@@ -310,7 +310,7 @@
             -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M9 7h8v8'/></svg>") center/contain no-repeat;
                     mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M7 17 17 7M9 7h8v8'/></svg>") center/contain no-repeat;
         }
-        .prj_meta dd a:hover { color: var(--c-point-d); }
+        .prj_meta dd a:hover { color: var(--c-point); }
 
         /* --- 3. INTRO — vertical impact rows, paren labels --------- */
         .prj_intro { padding: 0 0 96px; }
@@ -323,7 +323,7 @@
             display: inline-block;
             font-size: 13px; font-weight: 700;
             letter-spacing: 0.16em;
-            color: var(--c-point);
+            color: var(--c-ink-3);
             margin-bottom: 16px;
             font-variant-numeric: tabular-nums;
         }
@@ -409,7 +409,7 @@
         .intro_flow .step_body .desc strong {
             color: var(--c-ink-1);
             font-weight: 700;
-            background: linear-gradient(transparent 60%, rgba(37,99,235,0.16) 60%);
+            background: linear-gradient(transparent 60%, rgba(17,17,17,0.08) 60%);
             padding: 0 2px;
         }
         .intro_flow .step_tags {
@@ -428,7 +428,7 @@
             letter-spacing: -0.005em;
         }
         .intro_flow .step_tags li.is-key {
-            background: var(--c-point);
+            background: var(--c-ink-1);
             color: #fff;
             box-shadow: none;
         }
@@ -451,7 +451,7 @@
         .intro_flow .stats .s_val .u {
             font-size: 0.5em; color: var(--c-ink-3); margin-left: 6px; font-weight: 600;
         }
-        .intro_flow .stats .s_val.is-pt { color: var(--c-point); }
+        .intro_flow .stats .s_val.is-pt { color: var(--c-ink-1); }
         .intro_flow .stats .s_lbl {
             display: block;
             margin-top: 8px;
@@ -463,11 +463,11 @@
         /* DECISIONS — focus row: cobalt spine + faint tint.
            Dark surfaces are reserved for hero/footer only. */
         .intro_flow .step_focus {
-            background: linear-gradient(90deg, rgba(37,99,235,0.045), rgba(37,99,235,0) 64%);
-            box-shadow: inset 3px 0 0 var(--c-point), 0 -1px 0 var(--c-line);
+            background: linear-gradient(90deg, rgba(17,17,17,0.03), rgba(17,17,17,0) 64%);
+            box-shadow: inset 3px 0 0 var(--c-ink-1), 0 -1px 0 var(--c-line);
             padding-left: 40px;
         }
-        .intro_flow .step_focus .step_lbl::before { color: var(--c-point); }
+        .intro_flow .step_focus .step_lbl::before { color: var(--c-ink-1); }
 
         /* DELIVERABLES — outlined card variant */
         .intro_flow .step_out .step_tags li {
@@ -493,15 +493,15 @@
             padding: 18px 32px;
             font-size: 16px; font-weight: 600;
             color: #fff;
-            background: var(--c-point);
+            background: var(--c-ink-1);
             border-radius: var(--r-pill);
-            box-shadow: 0 8px 20px rgba(37,99,235,0.25);
+            box-shadow: 0 8px 20px rgba(17,17,17,0.18);
             transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
         }
         .btn_live:hover {
-            background: var(--c-point-d);
+            background: #333;
             transform: translateY(-2px);
-            box-shadow: 0 12px 28px rgba(37,99,235,0.32);
+            box-shadow: 0 12px 28px rgba(17,17,17,0.24);
         }
         .btn_live::after {
             content: ""; width: 14px; height: 14px;
@@ -523,7 +523,7 @@
             display: inline-block;
             font-size: 13px; font-weight: 700;
             letter-spacing: 0.14em;
-            color: var(--c-point);
+            color: var(--c-ink-3);
             margin-bottom: 20px;
         }
         .goal_head .eyebrow::before { content: "("; color: var(--c-ink-3); margin-right: 4px; }
@@ -588,13 +588,13 @@
         }
         .goal_item .pill_tobe .lbl {
             color: var(--c-ink-1);
-            background: var(--c-accent);
+            background: #fff;
         }
         .goal_item .arrow {
             justify-self: stretch;
             align-self: stretch;
             display: grid; place-items: center;
-            color: var(--c-point);
+            color: var(--c-ink-1);
             background: linear-gradient(90deg, var(--c-bg-sub) 0%, var(--c-bg-sub) 50%, var(--c-ink-1) 50%, var(--c-ink-1) 100%);
             position: relative;
         }
@@ -605,7 +605,8 @@
             transform: translateY(-50%);
             height: 40px; width: 40px;
             margin: 0 auto;
-            background: var(--c-point);
+            background: #fff;
+            box-shadow: 0 0 0 1px var(--c-line);
             border-radius: 50%;
         }
         .goal_item .arrow svg {
@@ -613,7 +614,7 @@
             display: block;
             position: relative;
             z-index: 1;
-            color: #fff;
+            color: var(--c-ink-1);
         }
         .goal_item .arrow .y { display: none; }
 
@@ -866,7 +867,7 @@
             display: inline-block;
             font-size: 13px; font-weight: 700;
             letter-spacing: 0.14em;
-            color: var(--c-point);
+            color: var(--c-ink-3);
             margin-bottom: 20px;
         }
         .visual_head .eyebrow::before { content: "("; color: var(--c-ink-3); margin-right: 4px; }
@@ -975,7 +976,7 @@
         .mock .row { height: 10%; background: var(--c-line); border-radius: 4px; }
         .mock .row.short { width: 40%; }
         .mock .row.tall  { height: 30%; }
-        .mock .row.accent{ background: var(--c-point); width: 30%; height: 8%; }
+        .mock .row.accent{ background: var(--c-ink-1); width: 30%; height: 8%; }
         .mock .grid {
             flex: 1; display: grid;
             grid-template-columns: repeat(3, 1fr);
@@ -983,7 +984,7 @@
             gap: 6%;
         }
         .mock .grid > span { background: var(--c-line-2); border-radius: 6px; }
-        .mock .grid > span:nth-child(1) { background: rgba(37,99,235,0.12); }
+        .mock .grid > span:nth-child(1) { background: rgba(17,17,17,0.08); }
 
         /* --- 7. FOOTNAV (목록보기 + TOP) --------------------------- */
         .prj_footnav {
@@ -1003,7 +1004,7 @@
             box-shadow: inset 0 0 0 1px var(--c-line), 0 2px 6px rgba(17,17,17,0.03);
             transition: box-shadow .15s ease, color .15s ease;
         }
-        .btn_list:hover { box-shadow: inset 0 0 0 1px var(--c-point), 0 2px 6px rgba(37,99,235,0.12); color: var(--c-point); }
+        .btn_list:hover { box-shadow: inset 0 0 0 1px var(--c-ink-1), 0 2px 6px rgba(17,17,17,0.08); color: var(--c-ink-1); }
         .btn_list::before {
             content: ""; width: 14px; height: 14px; background: currentColor;
             -webkit-mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'><path d='M3 6h18M3 12h18M3 18h18'/></svg>") center/contain no-repeat;
@@ -1046,7 +1047,7 @@
         .ft_brand .role { font-size: 13px; color: #888; margin-top: 6px; letter-spacing: 0.02em; }
         .ft_contact { font-size: 14px; color: #888; line-height: 1.8; }
         .ft_contact a { color: #fff; }
-        .ft_contact a:hover { color: var(--c-accent); }
+        .ft_contact a:hover { color: rgba(255,255,255,0.72); }
         .ft_bot { font-size: 12px; color: #555; box-shadow: 0 -1px 0 #1a1a1a; padding-top: 24px; }
 
         /* --- NOTE BOX (work-4 disclaimer) -------------------------- */
